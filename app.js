@@ -1,10 +1,9 @@
-// app.js
 const form = document.getElementById("contact-form");
 const contactList = document.getElementById("contact-list");
 
 let contacts = [];
 
-// Create (Add Contact)
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -19,7 +18,6 @@ form.addEventListener("submit", (e) => {
     form.reset();
 });
 
-// Read (Render Contacts)
 function renderContacts() {
     contactList.innerHTML = "";
 
@@ -36,7 +34,7 @@ function renderContacts() {
     });
 }
 
-// Update (Edit Contact)
+
 function editContact(id) {
     const contact = contacts.find((c) => c.id === id);
 
@@ -47,7 +45,7 @@ function editContact(id) {
     deleteContact(id);
 }
 
-// Delete (Remove Contact)
+
 function deleteContact(id) {
     contacts = contacts.filter((contact) => contact.id !== id);
     renderContacts();
